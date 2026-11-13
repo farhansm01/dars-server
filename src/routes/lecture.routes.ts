@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { getLecture } from "../controllers/lecture.controller";
+import { deleteLecture, getLecture, updateLecture } from "../controllers/lecture.controller";
 
 const router = Router();
 
 router.get("/:id", getLecture);
+router.put("/:id", updateLecture);
+router.delete("/:id", deleteLecture);
 
 export default router;

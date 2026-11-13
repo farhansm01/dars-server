@@ -6,7 +6,7 @@ import {
   getCourses,
   updateCourse,
 } from "../controllers/course.controller";
-import { getLecturesByCourse } from "../controllers/lecture.controller";
+import { createLecture, getLecturesByCourse } from "../controllers/lecture.controller";
 
 const router = Router();
 
@@ -17,5 +17,6 @@ router.put("/:id", updateCourse);
 router.delete("/:id", deleteCourse);
 
 router.get("/:courseId/lectures", getLecturesByCourse);
+router.post("/:courseId/lectures", createLecture);
 
 export default router;
