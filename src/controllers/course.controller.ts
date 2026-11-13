@@ -13,10 +13,7 @@ export const getCourses = async (req: Request, res: Response) => {
     res.status(200).json(courses);
   } catch (err) {
     console.error("Error fetching courses:", err);
-    res.status(500).json({
-      message: "Failed to fetch courses",
-      error: err instanceof Error ? err.message : String(err),
-    });
+    res.status(500).json({ message: "Failed to fetch courses" });
   }
 };
 

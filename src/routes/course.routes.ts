@@ -12,12 +12,11 @@ import { auth } from "../middleware/auth";
 const router = Router();
 
 router.get("/", getCourses);
+router.get("/:courseId/lectures", getLecturesByCourse);
+router.post("/:courseId/lectures", auth, createLecture);
 router.get("/:id", getCourse);
 router.post("/", auth, createCourse);
 router.put("/:id", auth, updateCourse);
 router.delete("/:id", auth, deleteCourse);
-
-router.get("/:courseId/lectures", getLecturesByCourse);
-router.post("/:courseId/lectures", auth, createLecture);
 
 export default router;
